@@ -1,0 +1,29 @@
+int v=0,dv=10;
+float iceX=100*random(0,7);
+float iceColor=random(180,200);
+
+void setup(){
+  size(700,500);
+  colorMode(HSB,360,100,100);
+}
+
+void draw(){
+  stroke(360,80);
+  strokeWeight(3);
+  fill((int)iceColor,100,100);
+
+  ice((int)iceX,0,70);
+
+
+}
+
+void ice(float x,float y,int r){
+  background(#F6FF95);
+  v=v+dv;
+  rect(x,y+v,r,r,5);
+
+   if(y+v>=height){
+   y=0;v=0;dv=10;
+   }
+
+}
